@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/shuffing.js"></script>
+    <style>
+    div {
+        width: 440px;
+        height: 220px;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+    </div>
+</body>
+
+</html>
+<script>
+var images = ['images/3484519c2f64387d94a9e3c5e7bcb758.jpg', 'images/7e914c12c3e8b36540a3dcb099949472.jpg', 'images/cfdf3c751a554873ecf4687616e1f858.jpg'];
+
+$("#div").shuffing({
+    images: images
+});
+</script>
