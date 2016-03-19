@@ -1,26 +1,30 @@
 (function($) {
     "use strict";
     var defaults = {
+        //变换的节奏
         sliding: 500,
-        timeOut: 2000
+        //隔几秒换一个图片
+        timeOut: 2000,
+        thisObj:null,
+        touchPause:false,
+        images:[]
     };
     $.fn.shuffing = function(array) {
-        this.css("white-space", "nowrap");
-        this.css("overflow", "hidden");
+        defaults.thisObj=this;
+        defaults.thisObj.css("white-space", "nowrap");
+        defaults.thisObj.css("overflow", "hidden");
         //img 标签集合
         //var imagehtmls = [];
         //循环创建节点
         for (var i = 0; i < array.images.length; i++) {
             var thisimage = array.images[i];
             var img = $("<img src='" + thisimage + "' style='height:100%;width:100%;'/>");
-            this.append(img);
+            defaults.thisObj.append(img);
         }
-        var imgWidth = $(this.find('img')[0]).width();
-
-        var thisObj = this;
+        var imgWidth = $(defaults.thisObj.find('img')[0]).width();
 
         setInterval(function() {
-            thisObj.animate({
+            defaults.thisObj.animate({
                 scrollLeft: imgWidth + "px"
             }, array.sliding || defaults.sliding, function() {
                 var first = array.images[0];
@@ -28,13 +32,11 @@
                 array.images.splice(jQuery.inArray(first, array.images), 1);
                 array.images.push(first);
 
-                var images = thisObj.find('img');
+                var images = defaults.thisObj.find('img');
                 images.each(function(index, e) {
                     $(e).attr('src', array.images[index]);
                 });
-                thisObj.animate({
-                    scrollLeft: 0 + "px"
-                }, 0);
+                defaults.thisObj.scrollLeft("0px");
             });
         }, array.timeOut || defaults.timeOut)
     }

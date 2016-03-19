@@ -1,0 +1,25 @@
+{
+  "name": "lunbo",
+  "version": "0.1.0",
+  "description": "无缝轮播",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaNan-Jin/jQuery.shuffing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaNan-Jin/jQuery.shuffing/issues"
+  },
+  "homepage": "https://github.com/JaNan-Jin/jQuery.shuffing#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3"
+  }
+}
